@@ -16,13 +16,6 @@ events = [
     Event(1, "Tech Meetup"),
     Event(2, "Python Workshop")
 ]
-
-#GET/events/<id> - Read
-@app.route("/events/<int:event_id>", methods=["GET"])
-def get_event(event_id):
-    event = next((e for e in events if e.id== event_id), None)
-    return jsonify(event.to_dict()) if event else ("Event not found" , 404)
-
 # TODO: Task 1 - Define the Problem
 # Create a new event from JSON input
 # POST/events - create 
